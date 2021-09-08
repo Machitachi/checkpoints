@@ -1,3 +1,3 @@
 # checkpoints
 
-<h1> Pagína de minha cidade </h1>
+<h1> Página de minha cidade </h1>

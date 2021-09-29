@@ -5,8 +5,7 @@
 // A informação Qualidade do Produto deve ser um número que irá de 0 a 10.
 // A informação Status deve ser um Booleano, indicando se o produto está disponível em estoque.
 
-
-let produtos = [
+const produtos = [
     {
         nomeDoProduto: "Mesa de trabalho",
         valorDoProduto: 500,
@@ -39,14 +38,6 @@ let produtos = [
     },
 ]
 
-let a = produtos.reduce((acumulador, produtos) => {
-    acumulador += produtos.valorDoProduto;
-
-    return acumulador;
-}, 0);
-
-console.log(a)
-
 // 2.	Em seguida, um usuário deseja filtrar os produtos, com base em alguns critérios. Selecione todos os produtos que tenham: 
 
 // Valor entre 482 e 1600;
@@ -55,10 +46,7 @@ console.log(a)
 
 // O resultado do filtro deve ser armazenado na variável carrinho.
 
-
-
- 
-
+const valorDoProdutoEntre = 
 function valorDoProdutoEntre(produto) {
     if (produto.valorDoProduto >= 482 && produto.valorDoProduto <= 1600) {
         return produtos;
@@ -75,21 +63,25 @@ function statusDoProduto(produto) {
 
 let carrinho = produtos.filter(valorDoProdutoEntre).filter(qualidadeDoProduto).filter(statusDoProduto);
 
-console.log(carrinho);
+// console.log(carrinho);
 
 
 // 3.	Por fim, é necessário exibir todos os itens presentes no carrinho, com seus nomes e preços correspondentes, e no final um valor total, resultante da somatória de todos os produtos.
 
-const resultado = produtos.valorDoProduto
 
-const somatoriaDaCompra = carrinho.map((produto) => {
-    let soma = [];
-    
-return {nomeDoProduto: produto.nomeDoProduto, preco: produto.valorDoProduto, total: resultado};
+let a = carrinho.reduce((acumulador, carrinho) => {
+    acumulador += carrinho.valorDoProduto;
+
+    return acumulador;
+}, 0);
+
+const exibirCompra = carrinho.map((produto) => {
+       
+return {nomeDoProduto: produto.nomeDoProduto, preco: produto.valorDoProduto, total: a};
 })
 
 
-console.log(somatoriaDaCompra)
+console.log(exibirCompra)
 
 
 

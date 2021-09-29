@@ -9,35 +9,43 @@
 let produtos = [
     {
         nomeDoProduto: "Mesa de trabalho",
-        valorDoProduto: 500.00,
+        valorDoProduto: 500,
         qualidadeDoProduto: 9,
         status: true,
     },
     {
         nomeDoProduto: "Computador",
-        valorDoProduto: 5550.00,
+        valorDoProduto: 5550,
         qualidadeDoProduto: 9,
         status: true,
     },
     {
         nomeDoProduto: "Celular XiMI",
-        valorDoProduto:340.00,
+        valorDoProduto:340,
         qualidadeDoProduto: 5,
         status: false,
     },
     {
         nomeDoProduto: "SSD 512gb",
-        valorDoProduto: 700.00,
+        valorDoProduto: 700,
         qualidadeDoProduto: 10,
         status: false,
     },
     {
         nomeDoProduto: "HD 2TB",
-        valorDoProduto: 650.00,
+        valorDoProduto: 650,
         qualidadeDoProduto: 7,
         status: true,
     },
 ]
+
+let a = produtos.reduce((acumulador, produtos) => {
+    acumulador += produtos.valorDoProduto;
+
+    return acumulador;
+}, 0);
+
+console.log(a)
 
 // 2.	Em seguida, um usuário deseja filtrar os produtos, com base em alguns critérios. Selecione todos os produtos que tenham: 
 
@@ -49,8 +57,7 @@ let produtos = [
 
 
 
-
-// console.log(produtos);
+ 
 
 function valorDoProdutoEntre(produto) {
     if (produto.valorDoProduto >= 482 && produto.valorDoProduto <= 1600) {
@@ -73,10 +80,12 @@ console.log(carrinho);
 
 // 3.	Por fim, é necessário exibir todos os itens presentes no carrinho, com seus nomes e preços correspondentes, e no final um valor total, resultante da somatória de todos os produtos.
 
+const resultado = produtos.valorDoProduto
+
 const somatoriaDaCompra = carrinho.map((produto) => {
     let soma = [];
     
-return {nomeDoProduto: produto.nomeDoProduto, preco: produto.valorDoProduto, total: soma};
+return {nomeDoProduto: produto.nomeDoProduto, preco: produto.valorDoProduto, total: resultado};
 })
 
 

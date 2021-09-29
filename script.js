@@ -10,7 +10,7 @@ let produtos = [
     {
         nomeDoProduto: "Mesa de trabalho",
         valorDoProduto: 500.00,
-        qualidadeDoProduto: 8,
+        qualidadeDoProduto: 9,
         status: true,
     },
     {
@@ -47,7 +47,10 @@ let produtos = [
 
 // O resultado do filtro deve ser armazenado na variável carrinho.
 
-console.log(produtos);
+
+
+
+// console.log(produtos);
 
 function valorDoProdutoEntre(produto) {
     if (produto.valorDoProduto >= 482 && produto.valorDoProduto <= 1600) {
@@ -60,22 +63,24 @@ function qualidadeDoProduto(produto) {
 }
 
 function statusDoProduto(produto) {
-    return produto.status;
+    return produto.status = "Disponível";
 }
 
-let produtosFiltrados = produtos.filter(valorDoProdutoEntre).filter(qualidadeDoProduto).filter(statusDoProduto);
-
-let carrinho = produtosFiltrados;
-
-console.log(produtosFiltrados);
+let carrinho = produtos.filter(valorDoProdutoEntre).filter(qualidadeDoProduto).filter(statusDoProduto);
 
 console.log(carrinho);
 
 
 // 3.	Por fim, é necessário exibir todos os itens presentes no carrinho, com seus nomes e preços correspondentes, e no final um valor total, resultante da somatória de todos os produtos.
 
+const somatoriaDaCompra = carrinho.map((produto) => {
+    let soma = [];
+    
+return {nomeDoProduto: produto.nomeDoProduto, preco: produto.valorDoProduto, total: soma};
+})
 
 
+console.log(somatoriaDaCompra)
 
 
 

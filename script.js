@@ -1,3 +1,50 @@
+const produtos = [
+	{ nome: "Mesa de trabalho", valor: 500, qualidade: 9, status: true },
+	{ nome: "Computador", valor: 5550, qualidade: 9, status: true },
+	{ nome: "Celular XiMI", valor:340, qualidade: 5, status: false },
+	{ nome: "SSD 512gb", valor: 700, qualidade: 10, status: false },
+	{ nome: 'HD 2TB', valor: 650, qualidade: 7, status: true }
+]
+
+const carrinho = produtos.filter(produto => {
+	if (
+		produto.valor <= 1600 &&
+		produto.valor >= 482 &&
+		produto.qualidade > 6 &&
+		produto.status
+	) {
+		return true
+	}
+})
+
+
+let valorTotal = carrinho.reduce((total, carrinho) => total += carrinho.valor, 0);
+
+console.log(
+	{
+		produtos: carrinho.map(produto => ({ nome: produto.nome, valor: produto.valor })),
+		valorTotal
+	}
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // // // No VS Code, resolva as seguintes situações em JavaScript.
 
 // // // 1.	Crie uma variável produtos, que contenha um array de objetos, com no mínimo 3 itens. Dentro da variável, liste produtos disponíveis, informando os seguintes detalhes: Nome do Produto, Valor do Produto, Qualidade do Produto e Status.
@@ -79,89 +126,3 @@
 // // console.log(exibirTotalDaCompraEProdutos);
 // // console.log(`Valor Total dos Produtos: ${somatoriaDosPrecos}`);
 
-// const produtos = [
-// 	{
-// 		nome: "Mesa de trabalho",
-// 		valor: 500,
-// 		qualidade: 9,
-// 		status: true,
-// 	},
-// 	{
-// 		nome: "Computador",
-// 		valor: 5550,
-// 		qualidade: 9,
-// 		status: true,
-// 	},
-// 	{
-// 		nome: "Celular XiMI",
-// 		valor:340,
-// 		qualidade: 5,
-// 		status: false,
-// 	},
-// 	{
-// 		nome: "SSD 512gb",
-// 		valor: 700,
-// 		qualidade: 10,
-// 		status: false,
-// 	},
-// 	{
-// 		nome: "HD 2TB",
-// 		valor: 650,
-// 		qualidade: 7,
-// 		status: true,
-// 	},
-// ]
-
-// const carrinho = produtos.filter(produto => {
-// 	if (
-// 		produto.valor >= 482 &&
-// 		produto.valor <= 1600 &&
-// 		produto.qualidade > 6 &&
-// 		produto.status
-// 	) {
-// 		return true
-// 	}
-// })
-
-
-// // não sei usar esse comando, apenas copiei o seu
-// let valorTotal = carrinho.reduce((acumulador, carrinho) => {
-// 	acumulador += carrinho.valor;
-// 	return acumulador;
-// }, 0)
-
-// const valorTotalEProdutos = carrinho.map((produto) => {
-// 		return { nome: produto.nome, preco: produto.valor, total: valorTotal};
-// });
-
-// console.log(valorTotalEProdutos)
-
-
-const produtos = [
-	{ nome: "Mesa de trabalho", valor: 500, qualidade: 9, status: true },
-	{ nome: "Computador", valor: 5550, qualidade: 9, status: true },
-	{ nome: "Celular XiMI", valor:340, qualidade: 5, status: false },
-	{ nome: "SSD 512gb", valor: 700, qualidade: 10, status: false },
-	{ nome: 'HD 2TB', valor: 650, qualidade: 7, status: true }
-]
-
-const carrinho = produtos.filter(_prod => {
-	if (
-		_prod.valor > 482 &&
-		_prod.valor < 1600 &&
-		_prod.qualidade > 6 &&
-		_prod.status
-	) {
-		return true
-	}
-})
-
-
-let valorTotal = carrinho.reduce((_total, _current) => _total += _current.valor, 0)
-
-console.log(
-	{
-		produtos: carrinho.map(_prod => ({ nome: _prod.nome, valor: _prod.valor })),
-		valorTotal
-	}
-)
